@@ -201,14 +201,35 @@ class LineChartW extends StatelessWidget {
   final AkbankData data;
   List<PriceEntry> currentList;
 
+  double findMax(){
+    double max = -1;
+    for(var i = 0; i<currentList.length; i++){
+      if(currentList[i].c > max){
+        max = currentList[i].c;
+      }
+    }
+    return max;
+  }
+  double findMin(){
+    double min = 1000000;
+    for(var i = 0; i<currentList.length; i++){
+      if(currentList[i].c < min){
+        min = currentList[i].c;
+      }
+    }
+    return min;
+  }
+  double findRange(){
+    return (findMax()-findMin())/3;
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 300,
       child: LineChart(
         LineChartData(
-          minY: 4,
-          maxY: 8,
+          minY: findMin()-findRange(),
+          maxY: findMax()+findRange(),
           minX: currentList[0].d.toDouble(),
           maxX: currentList[currentList.length - 1].d.toDouble(),
           lineBarsData: [
@@ -227,7 +248,7 @@ class LineChartW extends StatelessWidget {
           axisTitleData: FlAxisTitleData(
               leftTitle: AxisTitle(
                   showTitle: true,
-                  titleText: "Price"
+                  titleText: "Price (TRY)"
               ),
               bottomTitle: AxisTitle(
                   showTitle: true,
