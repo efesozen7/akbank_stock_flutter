@@ -13,7 +13,9 @@ Flutter
 ### How to use
 
 Click on the buttons presented under the graph to change the time constraints on the change of price.
-End with a few screenshots
+![Alt text](screenshots/Screenshot_1620312464.png "Price Change in 3 Months")
+![Alt text](screenshots/Screenshot_1620312468.png "Price Change in 1 Year")
+
 
 ## Built with
 
