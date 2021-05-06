@@ -7,27 +7,35 @@ import 'DataService.dart';
 import 'PriceEntry.dart';
 
 void main() {
+
   runApp(MaterialApp(
     title: "Akbank",
     home: new DisplayData(),
   ),
   );
+
 }
+
 class DisplayData extends StatefulWidget{
+
   @override
   _DisplayDataState createState() => _DisplayDataState();
 }
+
 class _DisplayDataState extends State<DisplayData> {
+
   final Service service = new Service();
   Future<AkbankData> akbankData;
   List<PriceEntry> currentList;
   String currentListName;
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     akbankData = service.getData();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +55,7 @@ class _DisplayDataState extends State<DisplayData> {
               } else {
                 if(currentList == null){
                   currentList = snapshot.data.d_1g;
-                  currentListName = "1G";
+                  currentListName = "1D";
                 }
                 return Container(
 
@@ -70,10 +78,10 @@ class _DisplayDataState extends State<DisplayData> {
                               onPressed: () {
                                 setState(() {
                                   currentList = snapshot.data.d_1g;
-                                  currentListName = "1G";
+                                  currentListName = "1D";
                                 });
                               },
-                              child: Text('1G',
+                              child: Text('1D',
                                 style: TextStyle(
                                     color: Colors.white
                                 ),),
@@ -85,10 +93,10 @@ class _DisplayDataState extends State<DisplayData> {
                               onPressed: () {
                                 setState(() {
                                   currentList = snapshot.data.d_1h;
-                                  currentListName = "1H";
+                                  currentListName = "1W";
                                 });
                               },
-                              child: Text('1H',
+                              child: Text('1W',
                                 style: TextStyle(
                                     color: Colors.white
                                 ),),
@@ -100,10 +108,10 @@ class _DisplayDataState extends State<DisplayData> {
                               onPressed: () {
                                 setState(() {
                                   currentList = snapshot.data.d_1a;
-                                  currentListName = "1A";
+                                  currentListName = "1M";
                                 });
                               },
-                              child: Text('1A',
+                              child: Text('1M',
                                 style: TextStyle(
                                     color: Colors.white
                                 ),),
@@ -115,10 +123,10 @@ class _DisplayDataState extends State<DisplayData> {
                               onPressed: () {
                                 setState(() {
                                   currentList = snapshot.data.d_3a;
-                                  currentListName = "3A";
+                                  currentListName = "3M";
                                 });
                               },
-                              child: Text('3A',
+                              child: Text('3M',
                                 style: TextStyle(
                                     color: Colors.white
                                 ),),
@@ -265,6 +273,7 @@ class LineChartW extends StatelessWidget {
               showTitles: false,
               reservedSize: 22,
             ),
+
           ),
         ),
 
