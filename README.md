@@ -1,16 +1,25 @@
-# finfree_akbank
+# Akbank Stock Tracker
 
-A new Flutter application.
-
+This project tracks daily, weekly, monthly and annual changes of Akbank stock with real time data. Changes are displayed on a graph!
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repo
+Run it on Android Studio
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Flutter
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### How to use
+
+Click on the buttons presented under the graph to change the time constraints on the change of price.
+End with a few screenshots
+
+## Built with
+
+* Dart
+* Flutter
+
+## Authors
+
+* **Efe Sozen** 
